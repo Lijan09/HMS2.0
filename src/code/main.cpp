@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    RenderWindow window(VideoMode(1080, 720), "HMS", Style::Fullscreen);
+    RenderWindow window(VideoMode(1366, 768), "HMS", Style::Resize);
     window.setFramerateLimit(60);
 
     Texture texture;
@@ -17,7 +17,6 @@ int main()
     }
 
     RectangleShape background(Vector2f(window.getSize().x,window.getSize().y));
-    RectangleShape closeBox(Vector2f())
 
     background.setTexture(&texture);
 
@@ -43,7 +42,7 @@ int main()
                 if (event.mouseButton.button == Mouse::Left)
                 {
 
-                    if (event.mouseButton.x >= window.getSize().x - 30 && event.mouseButton.x < window.getSize().x && event.mouseButton.y >= 0 && event.mouseButton.y < 30)
+                    if (event.mouseButton.x >= window.getSize().x - 50 && event.mouseButton.x < window.getSize().x && event.mouseButton.y >= 0 && event.mouseButton.y < 50)
                     {
                         window.close();
                     }

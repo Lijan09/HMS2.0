@@ -11,7 +11,7 @@ CXX_FLAGS =
 
 RC_DEFINES = -DSFML_NETWORK_EXPORTS
 
-RC_INCLUDES = -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\src
+RC_INCLUDES = -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\src
 
 RC_FLAGS = 
 

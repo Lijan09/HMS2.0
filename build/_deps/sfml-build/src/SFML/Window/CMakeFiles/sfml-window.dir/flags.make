@@ -11,7 +11,7 @@ CXX_FLAGS =
 
 RC_DEFINES = -DSFML_WINDOW_EXPORTS -DUNICODE -D_UNICODE
 
-RC_INCLUDES = -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\src -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\vulkan -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\glad\include
+RC_INCLUDES = -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\src -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\vulkan -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\glad\include
 
 RC_FLAGS = 
 

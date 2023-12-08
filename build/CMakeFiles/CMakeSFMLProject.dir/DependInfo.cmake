@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/College_stuffs/Project/cppTests/HMS2.0/src/code/main.cpp" "CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj" "gcc" "CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj.d"
+  "D:/College_stuffs/Project/HMS2.0/src/code/main.cpp" "CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj" "gcc" "CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

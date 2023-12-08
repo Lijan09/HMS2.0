@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=C:/Program Files/CMake/bin/cmake.exe;-P;D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake
-source_dir=D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-src
-work_dir=D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps
+command=C:/Program Files/CMake/bin/cmake.exe;-P;D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake
+source_dir=D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-src
+work_dir=D:/College_stuffs/Project/HMS2.0/build/_deps
 repository=https://github.com/SFML/SFML.git
 remote=origin
 init_submodules=TRUE

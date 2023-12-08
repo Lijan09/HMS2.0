@@ -11,7 +11,7 @@ CXX_FLAGS =
 
 RC_DEFINES = -DFLAC__NO_DLL -DOV_EXCLUDE_STATIC_CALLBACKS -DSFML_AUDIO_EXPORTS
 
-RC_INCLUDES = -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\src -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\minimp3 -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\AL -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers
+RC_INCLUDES = -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\src -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\minimp3 -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\AL -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers
 
 RC_FLAGS = 
 

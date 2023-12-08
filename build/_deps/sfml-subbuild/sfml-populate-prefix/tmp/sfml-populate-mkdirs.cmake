@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-src"
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build"
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix"
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/tmp"
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src"
-  "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-src"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/tmp"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src"
+  "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

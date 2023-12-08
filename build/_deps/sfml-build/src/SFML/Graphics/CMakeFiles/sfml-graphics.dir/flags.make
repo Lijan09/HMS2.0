@@ -11,7 +11,7 @@ CXX_FLAGS =
 
 RC_DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
 
-RC_INCLUDES = -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\src -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\stb_image -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\glad\include -I D:\College_stuffs\Project\cppTests\HMS2.0\build\_deps\sfml-src\extlibs\headers\freetype2
+RC_INCLUDES = -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\include -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\src -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\stb_image -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\glad\include -I D:\College_stuffs\Project\HMS2.0\build\_deps\sfml-src\extlibs\headers\freetype2
 
 RC_FLAGS = 
 

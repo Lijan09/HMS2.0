@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\College_stuffs\Project\cppTests\HMS2.0
+CMAKE_SOURCE_DIR = D:\College_stuffs\Project\HMS2.0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\College_stuffs\Project\cppTests\HMS2.0\build
+CMAKE_BINARY_DIR = D:\College_stuffs\Project\HMS2.0\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CMakeSFMLProject.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/CMakeSFMLProject.dir/flags.make
 
 CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
 CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
-CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj: D:/College_stuffs/Project/cppTests/HMS2.0/src/code/main.cpp
+CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj: D:/College_stuffs/Project/HMS2.0/src/code/main.cpp
 CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\College_stuffs\Project\cppTests\HMS2.0\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj"
-	C:\ProgramData\chocolatey\lib\winlibs\tools\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.obj -c D:\College_stuffs\Project\cppTests\HMS2.0\src\code\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\College_stuffs\Project\HMS2.0\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj"
+	C:\ProgramData\chocolatey\lib\winlibs\tools\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.obj -c D:\College_stuffs\Project\HMS2.0\src\code\main.cpp
 
 CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.i"
-	C:\ProgramData\chocolatey\lib\winlibs\tools\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\College_stuffs\Project\cppTests\HMS2.0\src\code\main.cpp > CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.i
+	C:\ProgramData\chocolatey\lib\winlibs\tools\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\College_stuffs\Project\HMS2.0\src\code\main.cpp > CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.i
 
 CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/src/code/main.cpp.s"
-	C:\ProgramData\chocolatey\lib\winlibs\tools\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\College_stuffs\Project\cppTests\HMS2.0\src\code\main.cpp -o CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.s
+	C:\ProgramData\chocolatey\lib\winlibs\tools\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\College_stuffs\Project\HMS2.0\src\code\main.cpp -o CMakeFiles\CMakeSFMLProject.dir\src\code\main.cpp.s
 
 # Object files for target CMakeSFMLProject
 CMakeSFMLProject_OBJECTS = \
@@ -98,9 +98,9 @@ CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-system.a
 CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/linkLibs.rsp
 CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/objects1.rsp
 CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\College_stuffs\Project\cppTests\HMS2.0\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CMakeSFMLProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\College_stuffs\Project\HMS2.0\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CMakeSFMLProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMakeSFMLProject.dir\link.txt --verbose=$(VERBOSE)
-	"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build/lib/sfml-graphics-2.dll D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build/lib/sfml-window-2.dll D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build/lib/sfml-system-2.dll D:/College_stuffs/Project/cppTests/HMS2.0/build
+	"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build/lib/sfml-graphics-2.dll D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build/lib/sfml-window-2.dll D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build/lib/sfml-system-2.dll D:/College_stuffs/Project/HMS2.0/build
 
 # Rule to build all files generated by this target.
 CMakeFiles/CMakeSFMLProject.dir/build: CMakeSFMLProject.exe
@@ -111,6 +111,6 @@ CMakeFiles/CMakeSFMLProject.dir/clean:
 .PHONY : CMakeFiles/CMakeSFMLProject.dir/clean
 
 CMakeFiles/CMakeSFMLProject.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\College_stuffs\Project\cppTests\HMS2.0 D:\College_stuffs\Project\cppTests\HMS2.0 D:\College_stuffs\Project\cppTests\HMS2.0\build D:\College_stuffs\Project\cppTests\HMS2.0\build D:\College_stuffs\Project\cppTests\HMS2.0\build\CMakeFiles\CMakeSFMLProject.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\College_stuffs\Project\HMS2.0 D:\College_stuffs\Project\HMS2.0 D:\College_stuffs\Project\HMS2.0\build D:\College_stuffs\Project\HMS2.0\build D:\College_stuffs\Project\HMS2.0\build\CMakeFiles\CMakeSFMLProject.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/CMakeSFMLProject.dir/depend
 

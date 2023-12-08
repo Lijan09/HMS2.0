@@ -1,4 +1,4 @@
-# Install script for directory: D:/College_stuffs/Project/cppTests/HMS2.0
+# Install script for directory: D:/College_stuffs/Project/HMS2.0
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build/cmake_install.cmake")
+  include("D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/College_stuffs/Project/cppTests/HMS2.0/build/CMakeSFMLProject.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/College_stuffs/Project/HMS2.0/build/CMakeSFMLProject.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/CMakeSFMLProject.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/CMakeSFMLProject.exe")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/College_stuffs/Project/cppTests/HMS2.0/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/College_stuffs/Project/HMS2.0/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

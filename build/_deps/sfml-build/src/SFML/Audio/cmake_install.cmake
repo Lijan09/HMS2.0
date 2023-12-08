@@ -1,4 +1,4 @@
-# Install script for directory: D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-src/src/SFML/Audio
+# Install script for directory: D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-src/src/SFML/Audio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,11 +38,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build/lib/libsfml-audio.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build/lib/libsfml-audio.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "bin" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "D:/College_stuffs/Project/cppTests/HMS2.0/build/_deps/sfml-build/lib/sfml-audio-2.dll")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "D:/College_stuffs/Project/HMS2.0/build/_deps/sfml-build/lib/sfml-audio-2.dll")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sfml-audio-2.dll" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sfml-audio-2.dll")
     if(CMAKE_INSTALL_DO_STRIP)
