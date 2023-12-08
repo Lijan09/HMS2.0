@@ -7,10 +7,7 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-find_package( OpenCV REQUIRED )
-include_directories( ${OpenCV_INCLUDE_DIRS} )
-
-add_executable(CMakeSFMLProject src/code/main.cpp)
+add_executable(CMakeSFMLProject src/code/main.cpp src/code/mainPage.cpp)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_20)
 if (WIN32 AND BUILD_SHARED_LIBS)
