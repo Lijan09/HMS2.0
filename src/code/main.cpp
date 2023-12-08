@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sfml/Graphics.hpp>
 #include "mainPage.cpp"
+#include "loginPage.cpp"
 
 using namespace sf;
 using namespace std;
@@ -20,6 +21,27 @@ int main()
             runMain(scene, &window);
             window.clear();
             break;
+
+        case 1: //adminLogin
+            runLogin(scene, &window);
+            break;
+
+        case 2: //doctorLogin
+            cout << "works!";
+            break;
+
+        case 3: //patientLogin
+            cout << "works!";
+            break;
+
+        case 4: //nurseLogin
+            cout << "works!";
+            break;
+
+        case 5: //receptionLogin
+            cout << "works!";
+            break;
+
         }
     }
 }

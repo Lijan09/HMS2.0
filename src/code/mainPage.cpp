@@ -88,7 +88,7 @@ inline void runMain(int *scene, RenderWindow *window)
     receptionText.setFillColor(black);
 
     Text userText("CHOOSE   USER!", font, 60);
-    userText.setPosition(432, 138);
+    userText.setPosition(432, 140);
     userText.setFillColor(black);
 
     while (window->isOpen())
@@ -114,6 +114,37 @@ inline void runMain(int *scene, RenderWindow *window)
                         window->close();
                     }
                 }
+
+                if(adminBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 1;
+                    return;
+                }
+ 
+                if(doctorBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 2;
+                    return;
+                }
+ 
+                if(patientBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 3;
+                    return;
+                }
+ 
+                if(nurseBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 4;
+                    return;
+                }
+ 
+                if(receptionBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 5;
+                    return;
+                }
+
                 break;
 
             default:
