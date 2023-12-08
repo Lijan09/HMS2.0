@@ -4,7 +4,7 @@
 using namespace sf;
 using namespace std;
 
-inline void runLogin(int *scene, RenderWindow *window)
+inline void receptionLogin(int *scene, RenderWindow *window)
 {
 
     Texture backgroundTexture;
