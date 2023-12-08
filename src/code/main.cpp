@@ -12,7 +12,7 @@ int main()
     Texture backgroundTexture;
     if (!backgroundTexture.loadFromFile("src/asset/Textures/mainpage.png"))
     {
-        cout << "Error loading background image\n";
+        cout << "Error loading background image\n"; 
         return -1;
     }
 
@@ -65,6 +65,30 @@ int main()
     RectangleShape background(Vector2f(window.getSize().x,window.getSize().y));
     background.setTexture(&backgroundTexture);
 
+    Text adminText("ADMIN", font, 44);
+    adminText.setPosition(221, 293);
+    adminText.setFillColor(black);
+
+    Text doctorText("DOCTOR", font, 44);
+    doctorText.setPosition(213, 444);
+    doctorText.setFillColor(black);
+    
+    Text patientText("PATIENT", font, 44);
+    patientText.setPosition(587, 600);
+    patientText.setFillColor(black);
+
+    Text nurseText("NURSE", font, 44);
+    nurseText.setPosition(972, 444);
+    nurseText.setFillColor(black);
+
+    Text receptionText("RECEPTION", font, 44);
+    receptionText.setPosition(920, 293);
+    receptionText.setFillColor(black);
+ 
+    Text userText("CHOOSE   USER!", font, 60);
+    userText.setPosition(432, 138);
+    userText.setFillColor(black);
+
     while (window.isOpen()) 
     {
         Event event;
@@ -93,8 +117,36 @@ int main()
             }
         }
 
-        //set positions
-
+        adminBox.setFillColor(red);
+        if (adminBox.getGlobalBounds().contains(Mouse::getPosition(window).x, Mouse::getPosition(window).y))
+        {
+            adminBox.setFillColor(hoverRed);
+        }
+ 
+        doctorBox.setFillColor(red);
+        if (doctorBox.getGlobalBounds().contains(Mouse::getPosition(window).x, Mouse::getPosition(window).y))
+        {
+            doctorBox.setFillColor(hoverRed);
+        }
+ 
+        patientBox.setFillColor(red);
+        if (patientBox.getGlobalBounds().contains(Mouse::getPosition(window).x, Mouse::getPosition(window).y))
+        {
+            patientBox.setFillColor(hoverRed);
+        }
+ 
+        nurseBox.setFillColor(red);
+        if (nurseBox.getGlobalBounds().contains(Mouse::getPosition(window).x, Mouse::getPosition(window).y))
+        {
+            nurseBox.setFillColor(hoverRed);
+        }
+ 
+        receptionBox.setFillColor(red);
+        if (receptionBox.getGlobalBounds().contains(Mouse::getPosition(window).x, Mouse::getPosition(window).y))
+        {
+            receptionBox.setFillColor(hoverRed);
+        }
+ 
         //draw everything
         window.clear(Color::White);
         window.draw(background);
@@ -105,6 +157,13 @@ int main()
         window.draw(patientBox);
         window.draw(nurseBox);
         window.draw(receptionBox);
+
+        window.draw(adminText);
+        window.draw(doctorText);
+        window.draw(patientText);
+        window.draw(nurseText);
+        window.draw(receptionText);
+        window.draw(userText);
 
         window.display();
     }
