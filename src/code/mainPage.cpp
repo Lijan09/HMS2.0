@@ -103,6 +103,15 @@ inline void runMain(int *scene, RenderWindow *window)
                 window->close();
                 break;
 
+            case Event::KeyPressed:
+
+                if (event.key.code == Keyboard::Escape)
+                {
+                    *scene = -1;
+                    return;
+                }
+                break;
+
             case Event::MouseButtonPressed:
 
                 if (event.mouseButton.button == Mouse::Left)

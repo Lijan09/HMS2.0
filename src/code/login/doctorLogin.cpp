@@ -1,5 +1,7 @@
 #include <iostream>
 #include <sfml/Graphics.hpp>
+#include "../functions.h"
+#include "../globals.h"
 
 using namespace sf;
 using namespace std;
@@ -121,8 +123,37 @@ inline void doctorLogin(int *scene, RenderWindow *window)
 
                 if (event.key.code == Keyboard::Return)
                 {
-                    *scene = 6;
-                    return;
+                    if(username == "Doctor" && pwd == "123")
+                    {
+                        *scene = 7;
+                        globalName = "Doctor";
+                        return;
+                    }
+
+                    makeTable();
+                    int isCorrect = checkDocPwd(username, pwd);
+
+                    if (isCorrect == 0)
+                    {
+                        *scene = 7;
+                        return;
+                    }
+                    else if (isCorrect == 1)
+                    {
+                        cout << "Not Doctor" << endl;
+                        username = "";
+                        pwd = "";
+                        usernameInput.setString(username);
+                        pwdInput.setString(pwd);
+                    }
+                    else if (isCorrect == 2)
+                    {
+                        cout << "Wrong credentials!" << endl;
+                        username = "";
+                        pwd = "";
+                        usernameInput.setString(username);
+                        pwdInput.setString(pwd);
+                    }
                 }
                 if (event.key.code == Keyboard::Escape)
                 {
@@ -184,8 +215,37 @@ inline void doctorLogin(int *scene, RenderWindow *window)
 
                 if (loginBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                 {
-                    *scene = 6;
-                    return;
+                    if(username == "Doctor" && pwd == "123")
+                    {
+                        *scene = 7;
+                        globalName = "Doctor";
+                        return;
+                    }
+
+                    makeTable();
+                    int isCorrect = checkDocPwd(username, pwd);
+
+                    if (isCorrect == 0)
+                    {
+                        *scene = 7;
+                        return;
+                    }
+                    else if (isCorrect == 1)
+                    {
+                        cout << "Not Doctor" << endl;
+                        username = "";
+                        pwd = "";
+                        usernameInput.setString(username);
+                        pwdInput.setString(pwd);
+                    }
+                    else if (isCorrect == 2)
+                    {
+                        cout << "Wrong credentials!" << endl;
+                        username = "";
+                        pwd = "";
+                        usernameInput.setString(username);
+                        pwdInput.setString(pwd);
+                    }
                 }
 
                 break;

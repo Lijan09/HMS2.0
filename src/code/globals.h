@@ -14,7 +14,13 @@ extern string globalName;
 extern sqlite3 *db;
 extern sqlite3_stmt *stmt;
 extern int result;
-extern string query;  // Declaration of the global variable
+extern string query;
+
+extern sqlite3 *pdb;
+extern sqlite3_stmt *pstmt;
+extern int presult;
+extern string pquery;  // Declaration of the global variable
+
 
 class Data{
 public:

@@ -6,7 +6,9 @@
 #include "login/doctorLogin.cpp"
 #include "login/nurseLogin.cpp"
 #include "login/receptionLogin.cpp"
+#include "doctor.cpp"
 #include "admin.cpp"
+#include "reception.cpp"
 #include "globals.h"
 #include "functions.h"
 
@@ -53,6 +55,12 @@ int main()
             break;
         case 6: // adminPage
             runAdmin(scene, &window);
+            break;
+        case 7: // doctorPage
+            runDoctor(scene, &window);
+            break;
+        case 8: // receptionPage
+            runReception(scene, &window);
             break;
         }
     }

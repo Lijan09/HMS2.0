@@ -184,13 +184,13 @@ inline void adminLogin(int *scene, RenderWindow *window)
 
                 if (loginBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                 {
-                    if(username == "Lijan" && pwd == "123")
+                    if(username == "Admin" && pwd == "123")
                     {
                         *scene = 6;
-                        globalName = "Lijan";
+                        globalName = "Admin";
                         return;
                     }
-                    
+
                     makeTable();
                     int isCorrect = checkAdminPwd(username, pwd);
 

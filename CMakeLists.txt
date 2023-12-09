@@ -13,10 +13,24 @@ FetchContent_Declare(SQLLite
 FetchContent_MakeAvailable(SQLLite)
 
 
-add_executable(CMakeSFMLProject src/code/globals.h src/code/functions.h
-src/code/main.cpp src/code/mainPage.cpp src/code/login/adminLogin.cpp 
-src/code/login/doctorLogin.cpp src/code/login/nurseLogin.cpp src/code/login/patientLogin.cpp src/code/login/receptionLogin.cpp 
-src/code/admin.cpp src/code/adminAdd.cpp )
+add_executable(CMakeSFMLProject 
+    src/code/globals.h 
+    src/code/functions.h
+
+    src/code/login/adminLogin.cpp 
+    src/code/login/doctorLogin.cpp 
+    src/code/login/nurseLogin.cpp 
+    src/code/login/patientLogin.cpp 
+    src/code/login/receptionLogin.cpp 
+    
+    src/code/main.cpp 
+    src/code/mainPage.cpp 
+    src/code/admin.cpp 
+    src/code/adminAdd.cpp 
+    src/code/doctor.cpp 
+    src/code/patientData.cpp 
+    src/code/reception.cpp
+)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics SQLiteCpp)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_20)
 if (WIN32 AND BUILD_SHARED_LIBS)
