@@ -43,6 +43,7 @@ void insertTable(string id, string name, string pwd, string pos)
     query = "INSERT INTO hospital(id, name, pwd, pos) VALUES(?,?,?,?);";
 
     sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
+
     result = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);
     sqlite3_bind_text(stmt, 1, id.c_str(), id.length(), SQLITE_TRANSIENT);
     sqlite3_bind_text(stmt, 2, name.c_str(), name.length(), SQLITE_TRANSIENT);
@@ -52,9 +53,10 @@ void insertTable(string id, string name, string pwd, string pos)
     int result1 = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
     sqlite3_exec(db, "COMMIT", 0, 0, 0);
+
     if (result1 != SQLITE_DONE)
     {
-        cout << "Error executing DELETE statement: " << sqlite3_errmsg(db) << endl;
+        cout << "Error executing ADD statement: " << sqlite3_errmsg(db) << endl;
     };
 
     if (result != SQLITE_OK)
@@ -142,6 +144,8 @@ int checkAdminPwd(string name, string pwd)
         str3 = reinterpret_cast<const char *>(change2);
         data[i].pos = str3;
 
+        cout << str << " " << str2 << " " << str3 << endl;
+
         if (stringlower(str3) == "admin")
         {
             isAdmin = 1;
@@ -155,16 +159,99 @@ int checkAdminPwd(string name, string pwd)
         i++;
     }
     sqlite3_exec(db, "COMMIT", 0, 0, 0);
-    
+
     if (isAdmin != 1)
     {
         return 1;
     }
 
-    if(okay)
+    if (okay)
     {
         return 0;
     }
 
     return 2; // No matching credentials found
+}
+
+void getId(string id, string &name, string &pwd, string &pos);
+
+void updateTable(string id, string name, string pwd, string pos)
+{
+    getId(id, name, pwd, pos);
+
+    sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
+
+    query = "UPDATE hospital SET name = ?, pwd = ?, pos = ? WHERE id=?";
+    result = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);
+
+    sqlite3_bind_text(stmt, 1, name.c_str(), name.length(), SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, pwd.c_str(), pwd.length(), SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 3, pos.c_str(), pos.length(), SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 4, id.c_str(), id.length(), SQLITE_TRANSIENT);
+
+    int result1 = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    sqlite3_exec(db, "COMMIT", 0, 0, 0);
+
+    if (result1 != SQLITE_DONE)
+    {
+        cout << "Error executing UPDATE statement: " << sqlite3_errmsg(db) << endl;
+    }
+
+    if (result != SQLITE_OK)
+    {
+        cout << "Error2: " << sqlite3_errmsg(db) << endl;
+    }
+    else
+    {
+        sqlite3_close(db);
+        cout << "Data Updated!" << endl;
+    }
+}
+
+void getId(string id, string &name, string &pwd, string &pos)
+{
+    query = "SELECT * FROM hospital";
+
+    sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
+    result = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);
+
+    if (result != SQLITE_OK)
+    {
+        cout << "Error3: " << sqlite3_errmsg(db) << endl;
+    }
+
+    string str, str1, str2, str3;
+
+    while ((result = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        const unsigned char *change = sqlite3_column_text(stmt, 0);
+        str = reinterpret_cast<const char *>(change);
+
+        const unsigned char *change1 = sqlite3_column_text(stmt, 1);
+        str1 = reinterpret_cast<const char *>(change1);
+
+        const unsigned char *change2 = sqlite3_column_text(stmt, 2);
+        str2 = reinterpret_cast<const char *>(change2);
+
+        const unsigned char *change3 = sqlite3_column_text(stmt, 3);
+        str3 = reinterpret_cast<const char *>(change3);
+
+        if (str == id)
+        {
+            if (name == "")
+            {
+                name = str1;
+            }
+            if (pwd == "")
+            {
+                pwd = str2;
+            }
+            if (pos == "")
+            {
+                pos = str3;
+            }
+        }
+    }
+    sqlite3_exec(db, "COMMIT", 0, 0, 0);
 }

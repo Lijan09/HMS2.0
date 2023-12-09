@@ -232,6 +232,20 @@ inline void runAdmin(int *scene, RenderWindow *window)
                     idInput.setString(idString);
                 }
 
+                if (updateBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    makeTable();
+                    updateTable(idString, username, pwd, pos);
+                    username = "";
+                    pwd = "";
+                    pos = "";
+                    idString = "";
+                    usernameInput.setString(username);
+                    pwdInput.setString(pwd);
+                    posInput.setString(pos);
+                    idInput.setString(idString);
+                }
+
                 break;
 
             case Event::TextEntered:
