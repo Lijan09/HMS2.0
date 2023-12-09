@@ -1,5 +1,7 @@
 #include <iostream>
 #include <sfml/Graphics.hpp>
+#include "../globals.h"
+#include "../functions.h"
 
 using namespace sf;
 using namespace std;
@@ -78,11 +80,11 @@ inline void adminLogin(int *scene, RenderWindow *window)
     userText.setPosition(140, 140);
     userText.setFillColor(black);
 
-    Text usernameInput("",font,44);
+    Text usernameInput("", font, 44);
     usernameInput.setPosition(437, 317);
     usernameInput.setFillColor(black);
 
-    Text pwdInput("",font,44);
+    Text pwdInput("", font, 44);
     pwdInput.setPosition(437, 407);
     pwdInput.setFillColor(black);
 
@@ -121,8 +123,6 @@ inline void adminLogin(int *scene, RenderWindow *window)
 
                 if (event.key.code == Keyboard::Return)
                 {
-                    *scene = 6;
-                    return;
                 }
                 if (event.key.code == Keyboard::Escape)
                 {
@@ -138,12 +138,12 @@ inline void adminLogin(int *scene, RenderWindow *window)
                     if (username.size() > 0 && userBoxWhite.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                     {
                         username.erase(username.end() - 1); // Remove the last character from the input string
-                        usernameInput.setString(username);   // Update the input text object with the new input string
+                        usernameInput.setString(username);  // Update the input text object with the new input string
                     }
 
                     if (pwd.size() > 0 && pwdBoxWhite.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                     {
-                        pwd.erase(pwd.end() - 1);                   // Remove the last character from the input string
+                        pwd.erase(pwd.end() - 1);                    // Remove the last character from the input string
                         pwdInput.setString(string(pwd.size(), '*')); // Update the input text object with a string of asterisks
                     }
                 }
@@ -184,8 +184,37 @@ inline void adminLogin(int *scene, RenderWindow *window)
 
                 if (loginBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                 {
-                    *scene = 6;
-                    return;
+                    if(username == "Lijan" && pwd == "123")
+                    {
+                        *scene = 6;
+                        globalName = "Lijan";
+                        return;
+                    }
+                    
+                    makeTable();
+                    int isCorrect = checkAdminPwd(username, pwd);
+
+                    if (isCorrect == 0)
+                    {
+                        *scene = 6;
+                        return;
+                    }
+                    else if (isCorrect == 1)
+                    {
+                        cout << "Not Admin" << endl;
+                        username = "";
+                        pwd = "";
+                        usernameInput.setString(username);
+                        pwdInput.setString(pwd);
+                    }
+                    else if (isCorrect == 2)
+                    {
+                        cout << "Wrong credentials!" << endl;
+                        username = "";
+                        pwd = "";
+                        usernameInput.setString(username);
+                        pwdInput.setString(pwd);
+                    }
                 }
 
                 break;

@@ -7,12 +7,17 @@
 #include "login/nurseLogin.cpp"
 #include "login/receptionLogin.cpp"
 #include "admin.cpp"
+#include "globals.h"
+#include "functions.h"
 
 using namespace sf;
 using namespace std;
 
+string globalName;
+
 int main()
 {
+
     int *scene = new int(0);
 
     RenderWindow window(VideoMode(1366, 768), "HMS", Style::Resize);
@@ -27,29 +32,28 @@ int main()
             window.clear();
             break;
 
-        case 1: //adminLogin
+        case 1: // adminLogin
             adminLogin(scene, &window);
             break;
 
-        case 2: //doctorLogin
+        case 2: // doctorLogin
             doctorLogin(scene, &window);
             break;
 
-        case 3: //patientLogin
+        case 3: // patientLogin
             patientLogin(scene, &window);
             break;
 
-        case 4: //nurseLogin
+        case 4: // nurseLogin
             nurseLogin(scene, &window);
             break;
 
-        case 5: //receptionLogin
+        case 5: // receptionLogin
             receptionLogin(scene, &window);
             break;
-        case 6: //adminPage
+        case 6: // adminPage
             runAdmin(scene, &window);
             break;
-
         }
     }
 }
