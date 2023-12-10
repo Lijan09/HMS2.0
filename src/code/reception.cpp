@@ -71,8 +71,12 @@ inline void runReception(int *scene, RenderWindow *window)
     updateText.setPosition(875, 514);
     updateText.setFillColor(black);
 
+    Text viewText("View Lists", font, 44);
+    viewText.setPosition(908, 620);
+    viewText.setFillColor(black);
+
     Text logoutText("LogOut", font, 44);
-    logoutText.setPosition(190, 608);
+    logoutText.setPosition(190, 623);
     logoutText.setFillColor(black);
 
     RectangleShape addBox(Vector2f(305, 75));
@@ -87,8 +91,12 @@ inline void runReception(int *scene, RenderWindow *window)
     updateBox.setPosition(871, 505);
     updateBox.setFillColor(red);
 
+    RectangleShape viewBox(Vector2f(305, 75));
+    viewBox.setPosition(871, 615);
+    viewBox.setFillColor(red);
+
     RectangleShape logoutBox(Vector2f(305, 75));
-    logoutBox.setPosition(120, 600);
+    logoutBox.setPosition(120, 615);
     logoutBox.setFillColor(red);
 
     RectangleShape idBoxBlack(Vector2f(30, 56));
@@ -182,6 +190,12 @@ inline void runReception(int *scene, RenderWindow *window)
                 if (logoutBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                 {
                     *scene = 0;
+                    return;
+                }
+
+                if (viewBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 12;
                     return;
                 }
 
@@ -300,6 +314,12 @@ inline void runReception(int *scene, RenderWindow *window)
             logoutBox.setFillColor(hoverRed);
         }
 
+        viewBox.setFillColor(red);
+        if (viewBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+        {
+            viewBox.setFillColor(hoverRed);
+        }
+
         userBoxWhite.setFillColor(white);
         if (userBoxWhite.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
         {
@@ -325,6 +345,7 @@ inline void runReception(int *scene, RenderWindow *window)
         window->draw(updateBox);
         window->draw(deleteBox);
         window->draw(addBox);
+        window->draw(viewBox);
         window->draw(logoutBox);
         window->draw(userBoxBlack);
         window->draw(userBoxWhite);
@@ -338,6 +359,7 @@ inline void runReception(int *scene, RenderWindow *window)
         window->draw(addText);
         window->draw(deleteText);
         window->draw(updateText);
+        window->draw(viewText);
         window->draw(logoutText);
 
         window->draw(usernameInput);

@@ -7,11 +7,11 @@
 using namespace sf;
 using namespace std;
 
-inline void runLists(int *scene, RenderWindow *window)
+inline void runPatientList(int *scene, RenderWindow *window)
 {
 
     Texture backgroundTexture;
-    if (!backgroundTexture.loadFromFile("src/asset/Textures/listpage.png"))
+    if (!backgroundTexture.loadFromFile("src/asset/Textures/patientlistpage.png"))
     {
         cout << "Error loading background image\n";
         *scene = -1;
@@ -83,9 +83,9 @@ inline void runLists(int *scene, RenderWindow *window)
     int i = 0, page = 1, dataindex = 0;
     totalData = 0;
 
-    sqlite3_open("hospital.db", &db);
+    sqlite3_open("patient.db", &db);
 
-    query = "SELECT * FROM hospital";
+    query = "SELECT * FROM patient";
     sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
     result = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);
 
@@ -163,7 +163,7 @@ inline void runLists(int *scene, RenderWindow *window)
                     page--;
                     if (page < 1)
                     {
-                        *scene = 6;
+                        *scene = 8;
                         return;
                     }
                 }
@@ -214,7 +214,7 @@ inline void runLists(int *scene, RenderWindow *window)
                     nameText.setPosition(590, id_y);
                     nameText.setString(data[k].name);
 
-                    posText.setPosition(1014, id_y);
+                    posText.setPosition(925, id_y);
                     posText.setString(data[k].pos);
 
                     window->draw(idText);

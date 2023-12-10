@@ -12,6 +12,7 @@
 #include "nurse.cpp"
 #include "patient.cpp"
 #include "list.cpp"
+#include "patientList.cpp"
 #include "globals.h"
 #include "functions.h"
 
@@ -83,6 +84,10 @@ int main()
             runLists(scene, &window);
             break;
 
+        case 12:
+            runPatientList(scene, &window);
+            break;
+            
         }
     }
 }

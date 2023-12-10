@@ -33,6 +33,7 @@ add_executable(CMakeSFMLProject
     src/code/patient.cpp
     src/code/nurse.cpp 
     src/code/list.cpp
+    src/code/patientList.cpp
 )
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics SQLiteCpp)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_20)
