@@ -14,6 +14,8 @@ void updateTable(string id, string name, string pwd, string pos);
 int checkAdminPwd(string name, string pwd);
 int checkDocPwd(string name, string pwd);
 int checkRecpPwd(string name, string pwd);
+int checkPatientPwd(string name, string pwd);
+int checkNursePwd(string name, string pwd);
 
 void makePatient();
 void insertPatient(string id, string name, string pwd);

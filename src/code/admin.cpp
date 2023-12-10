@@ -52,111 +52,119 @@ inline void runAdmin(int *scene, RenderWindow *window)
 
     Text userText("", font, 60);
     userText.setString(userString);
-    userText.setPosition(300, 140);
+    userText.setPosition(270, 120);
     userText.setFillColor(black);
 
     Text commandText("Choose an Option", font, 44);
-    commandText.setPosition(478, 245);
+    commandText.setPosition(478, 225);
     commandText.setFillColor(black);
 
     Text addText("Add Data", font, 44);
-    addText.setPosition(81, 637);
+    addText.setPosition(914, 292);
     addText.setFillColor(black);
 
     Text deleteText("Delete Data", font, 44);
-    deleteText.setPosition(385, 637);
+    deleteText.setPosition(886, 403);
     deleteText.setFillColor(black);
 
     Text updateText("Update Data", font, 44);
-    updateText.setPosition(704, 637);
+    updateText.setPosition(875, 514);
     updateText.setFillColor(black);
 
     Text logoutText("LogOut", font, 44);
-    logoutText.setPosition(1100, 637);
+    logoutText.setPosition(200, 620);
     logoutText.setFillColor(black);
 
+    Text viewText("View Lists", font, 44);
+    viewText.setPosition(908, 620);
+    viewText.setFillColor(black);
+
     RectangleShape addBox(Vector2f(305, 75));
-    addBox.setPosition(39, 630);
+    addBox.setPosition(871, 285);
     addBox.setFillColor(red);
 
     RectangleShape deleteBox(Vector2f(305, 75));
-    deleteBox.setPosition(370, 630);
+    deleteBox.setPosition(871, 395);
     deleteBox.setFillColor(red);
 
     RectangleShape updateBox(Vector2f(305, 75));
-    updateBox.setPosition(700, 630);
+    updateBox.setPosition(871, 505);
     updateBox.setFillColor(red);
 
+    RectangleShape viewBox(Vector2f(305, 75));
+    viewBox.setPosition(871, 615);
+    viewBox.setFillColor(red);
+
     RectangleShape logoutBox(Vector2f(305, 75));
-    logoutBox.setPosition(1030, 630);
+    logoutBox.setPosition(135, 615);
     logoutBox.setFillColor(red);
 
     // input boxes
 
-    RectangleShape userBoxBlack(Vector2f(30, 56));
-    userBoxBlack.setPosition(308, 381);
-    userBoxBlack.setFillColor(black);
-
     RectangleShape idBoxBlack(Vector2f(30, 56));
-    idBoxBlack.setPosition(935, 381);
+    idBoxBlack.setPosition(409, 308);
     idBoxBlack.setFillColor(black);
 
     RectangleShape idBoxWhite(Vector2f(348, 56));
-    idBoxWhite.setPosition(965, 381);
+    idBoxWhite.setPosition(439, 308);
     idBoxWhite.setFillColor(white);
 
+    RectangleShape userBoxBlack(Vector2f(30, 56));
+    userBoxBlack.setPosition(409, 386);
+    userBoxBlack.setFillColor(black);
+
+    RectangleShape userBoxWhite(Vector2f(348, 56));
+    userBoxWhite.setPosition(439, 386);
+    userBoxWhite.setFillColor(white);
+
+    RectangleShape pwdBoxBlack(Vector2f(30, 56));
+    pwdBoxBlack.setPosition(409, 464);
+    pwdBoxBlack.setFillColor(black);
+
+    RectangleShape pwdBoxWhite(Vector2f(348, 56));
+    pwdBoxWhite.setPosition(439, 464);
+    pwdBoxWhite.setFillColor(white);
+
     RectangleShape posBoxBlack(Vector2f(30, 56));
-    posBoxBlack.setPosition(935, 459);
+    posBoxBlack.setPosition(409, 542);
     posBoxBlack.setFillColor(black);
 
     RectangleShape posBoxWhite(Vector2f(348, 56));
-    posBoxWhite.setPosition(965, 459);
+    posBoxWhite.setPosition(439, 542);
     posBoxWhite.setFillColor(white);
 
-    RectangleShape pwdBoxBlack(Vector2f(30, 56));
-    pwdBoxBlack.setPosition(308, 459);
-    pwdBoxBlack.setFillColor(black);
-
-    RectangleShape userBoxWhite(Vector2f(348, 56));
-    userBoxWhite.setPosition(338, 381);
-    userBoxWhite.setFillColor(white);
-
-    RectangleShape pwdBoxWhite(Vector2f(348, 56));
-    pwdBoxWhite.setPosition(338, 459);
-    pwdBoxWhite.setFillColor(white);
-
     // inputs
-
-    Text usernameInput("", font, 40);
-    usernameInput.setPosition(343, 386);
+   
+    Text usernameInput("", font, 44);
+    usernameInput.setPosition(444, 391);
     usernameInput.setFillColor(black);
 
-    Text usernameText("UserName:", font, 40);
-    usernameText.setPosition(54, 390);
+    Text usernameText("UserName:", font, 44);
+    usernameText.setPosition(135, 385);
     usernameText.setFillColor(black);
 
-    Text pwdInput("", font, 40);
-    pwdInput.setPosition(343, 464);
+    Text pwdInput("", font, 44);
+    pwdInput.setPosition(444, 469);
     pwdInput.setFillColor(black);
 
-    Text pwdText("Password:", font, 40);
-    pwdText.setPosition(54, 468);
+    Text pwdText("Password:", font, 44);
+    pwdText.setPosition(135, 468);
     pwdText.setFillColor(black);
 
-    Text idInput("", font, 40);
-    idInput.setPosition(970, 384);
+    Text idInput("", font, 44);
+    idInput.setPosition(444, 313);
     idInput.setFillColor(black);
 
-    Text idText("ID:", font, 40);
-    idText.setPosition(719, 388);
+    Text idText("ID:", font, 44);
+    idText.setPosition(135, 307);
     idText.setFillColor(black);
 
     Text posInput("", font, 40);
-    posInput.setPosition(970, 464);
+    posInput.setPosition(444, 547);
     posInput.setFillColor(black);
 
     Text posText("Position:", font, 40);
-    posText.setPosition(719, 468);
+    posText.setPosition(135, 548);
     posText.setFillColor(black);
 
     string username = "";
@@ -201,6 +209,12 @@ inline void runAdmin(int *scene, RenderWindow *window)
                 if (logoutBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
                 {
                     *scene = 0;
+                    return;
+                }
+
+                if (viewBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+                {
+                    *scene = 11;
                     return;
                 }
 
@@ -331,6 +345,12 @@ inline void runAdmin(int *scene, RenderWindow *window)
             updateBox.setFillColor(hoverRed);
         }
 
+        viewBox.setFillColor(red);
+        if (viewBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
+        {
+            viewBox.setFillColor(hoverRed);
+        }
+
         logoutBox.setFillColor(red);
         if (logoutBox.getGlobalBounds().contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y))
         {
@@ -368,6 +388,7 @@ inline void runAdmin(int *scene, RenderWindow *window)
         window->draw(updateBox);
         window->draw(deleteBox);
         window->draw(addBox);
+        window->draw(viewBox);
         window->draw(logoutBox);
         window->draw(userBoxBlack);
         window->draw(userBoxWhite);
@@ -384,6 +405,7 @@ inline void runAdmin(int *scene, RenderWindow *window)
         window->draw(deleteText);
         window->draw(updateText);
         window->draw(logoutText);
+        window->draw(viewText);
 
         window->draw(usernameInput);
         window->draw(usernameText);

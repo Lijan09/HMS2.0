@@ -107,7 +107,6 @@ string stringlower(string convert)
 
 int checkAdminPwd(string name, string pwd)
 {
-    int totalData = 0, i = 0;
     bool okay = false;
 
     query = "SELECT * FROM hospital";
@@ -120,12 +119,6 @@ int checkAdminPwd(string name, string pwd)
         return 0;
     }
 
-    while ((result = sqlite3_step(stmt)) == SQLITE_ROW)
-    {
-        totalData = totalData + 1;
-    }
-
-    Data data[totalData];
     string str, str2, str3;
 
     int isAdmin = 0; // Assuming not an admin by default
@@ -134,17 +127,12 @@ int checkAdminPwd(string name, string pwd)
     {
         const unsigned char *change = sqlite3_column_text(stmt, 1);
         str = reinterpret_cast<const char *>(change);
-        data[i].name = str;
 
         const unsigned char *change1 = sqlite3_column_text(stmt, 2);
         str2 = reinterpret_cast<const char *>(change1);
-        data[i].pwd = str2;
 
         const unsigned char *change2 = sqlite3_column_text(stmt, 3);
         str3 = reinterpret_cast<const char *>(change2);
-        data[i].pos = str3;
-
-        cout << str << " " << str2 << " " << str3 << endl;
 
         if (stringlower(str3) == "admin")
         {
@@ -156,7 +144,6 @@ int checkAdminPwd(string name, string pwd)
             globalName = str;
             okay = true;
         }
-        i++;
     }
     sqlite3_exec(db, "COMMIT", 0, 0, 0);
 
@@ -258,7 +245,7 @@ void getId(string id, string &name, string &pwd, string &pos)
 
 int checkDocPwd(string name, string pwd)
 {
-    int totalData = 0, i = 0;
+
     bool okay = false;
 
     query = "SELECT * FROM hospital";
@@ -271,12 +258,6 @@ int checkDocPwd(string name, string pwd)
         return 0;
     }
 
-    while ((result = sqlite3_step(stmt)) == SQLITE_ROW)
-    {
-        totalData = totalData + 1;
-    }
-
-    Data data[totalData];
     string str, str2, str3;
 
     int isDoctor = 0; // Assuming not an admin by default
@@ -285,15 +266,12 @@ int checkDocPwd(string name, string pwd)
     {
         const unsigned char *change = sqlite3_column_text(stmt, 1);
         str = reinterpret_cast<const char *>(change);
-        data[i].name = str;
 
         const unsigned char *change1 = sqlite3_column_text(stmt, 2);
         str2 = reinterpret_cast<const char *>(change1);
-        data[i].pwd = str2;
 
         const unsigned char *change2 = sqlite3_column_text(stmt, 3);
         str3 = reinterpret_cast<const char *>(change2);
-        data[i].pos = str3;
 
         if (stringlower(str3) == "doctor")
         {
@@ -305,9 +283,9 @@ int checkDocPwd(string name, string pwd)
             globalName = str;
             okay = true;
         }
-        i++;
     }
     sqlite3_exec(db, "COMMIT", 0, 0, 0);
+    sqlite3_close(db);
 
     if (isDoctor != 1)
     {
@@ -324,7 +302,6 @@ int checkDocPwd(string name, string pwd)
 
 int checkRecpPwd(string name, string pwd)
 {
-    int totalData = 0, i = 0;
     bool okay = false;
 
     query = "SELECT * FROM hospital";
@@ -337,12 +314,6 @@ int checkRecpPwd(string name, string pwd)
         return 0;
     }
 
-    while ((result = sqlite3_step(stmt)) == SQLITE_ROW)
-    {
-        totalData = totalData + 1;
-    }
-
-    Data data[totalData];
     string str, str2, str3;
 
     int isReception = 0; // Assuming not an admin by default
@@ -351,15 +322,12 @@ int checkRecpPwd(string name, string pwd)
     {
         const unsigned char *change = sqlite3_column_text(stmt, 1);
         str = reinterpret_cast<const char *>(change);
-        data[i].name = str;
 
         const unsigned char *change1 = sqlite3_column_text(stmt, 2);
         str2 = reinterpret_cast<const char *>(change1);
-        data[i].pwd = str2;
 
         const unsigned char *change2 = sqlite3_column_text(stmt, 3);
         str3 = reinterpret_cast<const char *>(change2);
-        data[i].pos = str3;
 
         if (stringlower(str3) == "reception")
         {
@@ -371,11 +339,113 @@ int checkRecpPwd(string name, string pwd)
             globalName = str;
             okay = true;
         }
-        i++;
+    }
+    sqlite3_exec(db, "COMMIT", 0, 0, 0);
+    sqlite3_close(db);
+
+    if (isReception != 1)
+    {
+        return 1;
+    }
+
+    if (okay)
+    {
+        return 0;
+    }
+
+    return 2; // No matching credentials found
+}
+
+int checkPatientPwd(string name, string pwd)
+{
+
+    bool okay = false;
+
+    query = "SELECT * FROM patient";
+    sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
+    result = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);
+
+    if (result != SQLITE_OK)
+    {
+        cout << "Error3: " << sqlite3_errmsg(db) << endl;
+        return 0;
+    }
+
+    string str, str2, str3;
+
+    int isReception = 0; // Assuming not an admin by default
+
+    while ((result = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        const unsigned char *change = sqlite3_column_text(stmt, 1);
+        str = reinterpret_cast<const char *>(change);
+
+        const unsigned char *change1 = sqlite3_column_text(stmt, 2);
+        str2 = reinterpret_cast<const char *>(change1);
+
+        const unsigned char *change2 = sqlite3_column_text(stmt, 3);
+        str3 = reinterpret_cast<const char *>(change2);
+
+        if (str == name && str2 == pwd)
+        {
+            globalMeds = str3;
+            globalName = str;
+            okay = true;
+        }
     }
     sqlite3_exec(db, "COMMIT", 0, 0, 0);
 
-    if (isReception != 1)
+    if (okay)
+    {
+        return 0;
+    }
+
+    return 2; // No matching credentials found
+}
+
+int checkNursePwd(string name, string pwd)
+{
+    bool okay = false;
+
+    query = "SELECT * FROM hospital";
+    sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
+    result = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);
+
+    if (result != SQLITE_OK)
+    {
+        cout << "Error3: " << sqlite3_errmsg(db) << endl;
+        return 0;
+    }
+
+    string str, str2, str3;
+
+    int isNurse = 0; // Assuming not an admin by default
+
+    while ((result = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        const unsigned char *change = sqlite3_column_text(stmt, 1);
+        str = reinterpret_cast<const char *>(change);
+
+        const unsigned char *change1 = sqlite3_column_text(stmt, 2);
+        str2 = reinterpret_cast<const char *>(change1);
+
+        const unsigned char *change2 = sqlite3_column_text(stmt, 3);
+        str3 = reinterpret_cast<const char *>(change2);
+
+        if (stringlower(str3) == "nurse")
+        {
+            isNurse = 1;
+        }
+
+        if (str == name && str2 == pwd && stringlower(str3) == "nurse")
+        {
+            globalName = str;
+            okay = true;
+        }
+    }
+    sqlite3_exec(db, "COMMIT", 0, 0, 0);
+
+    if (isNurse != 1)
     {
         return 1;
     }

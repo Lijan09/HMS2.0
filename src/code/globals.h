@@ -9,8 +9,11 @@
 
 using namespace std;
 
-extern int totalData;
 extern string globalName;
+extern string globalMeds;
+
+extern int totalData;
+
 extern sqlite3 *db;
 extern sqlite3_stmt *stmt;
 extern int result;

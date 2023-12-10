@@ -9,6 +9,9 @@
 #include "doctor.cpp"
 #include "admin.cpp"
 #include "reception.cpp"
+#include "nurse.cpp"
+#include "patient.cpp"
+#include "list.cpp"
 #include "globals.h"
 #include "functions.h"
 
@@ -16,6 +19,8 @@ using namespace sf;
 using namespace std;
 
 string globalName;
+string globalMeds;
+int totalData;
 
 int main()
 {
@@ -53,15 +58,31 @@ int main()
         case 5: // receptionLogin
             receptionLogin(scene, &window);
             break;
+
         case 6: // adminPage
             runAdmin(scene, &window);
             break;
+
         case 7: // doctorPage
             runDoctor(scene, &window);
             break;
+
         case 8: // receptionPage
             runReception(scene, &window);
             break;
+
+        case 9: // patientPage
+            runPatient(scene, &window);
+            break;
+
+        case 10: // nursePage
+            runNurse(scene, &window);
+            break;
+            
+        case 11:
+            runLists(scene, &window);
+            break;
+
         }
     }
 }
